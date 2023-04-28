@@ -32,6 +32,7 @@ type Props = {
 }
 
 // Teste git
+// Teste git
 
 const Home: NextPage<Props> = ({ experiences, pageInfo, projects, skills, socials }) => {
   return (
