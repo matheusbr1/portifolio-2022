@@ -31,8 +31,9 @@ type Props = {
   socials: Social[]
 }
 
-// Teste git
-// Teste git
+// Teste git commit A 
+// Teste git commit B
+// Teste git commit C
 
 const Home: NextPage<Props> = ({ experiences, pageInfo, projects, skills, socials }) => {
   return (
