@@ -11,17 +11,11 @@ import Skills from '../components/Skills'
 import WorkExperience from '../components/WorkExperience'
 import { Experience, PageInfo, Project, Skill, Social } from '../typings'
 import { sanityClient, urlFor } from '../sanity'
-// import { experienceQuery } from './api/getExperience'
-// import { pageInfoQuery } from './api/getPageInfo'
-// import { projectsQuery } from './api/getProjects'
-// import { skillsQuery } from './api/getSkills'
-// import { socialsQuery } from './api/getSocials'
-
-import { fetchExperience } from '../utils/fetchExperience'
-import { fetchPageInfo } from '../utils/fetchPageInfo'
-import { fetchProjects } from '../utils/fetchProjects'
-import { fetchSkills } from '../utils/fetchSkills'
-import { fetchSocials } from '../utils/fetchSocials'
+import { experienceQuery } from './api/getExperience'
+import { pageInfoQuery } from './api/getPageInfo'
+import { projectsQuery } from './api/getProjects'
+import { skillsQuery } from './api/getSkills'
+import { socialsQuery } from './api/getSocials'
 
 type Props = {
   pageInfo: PageInfo
@@ -88,17 +82,11 @@ const Home: NextPage<Props> = ({ experiences, pageInfo, projects, skills, social
 export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo()
-  const experiences: Experience[] = await fetchExperience()
-  const skills: Skill[] = await fetchSkills()
-  const projects: Project[] = await fetchProjects()
-  const socials: Social[] = await fetchSocials()
-
-  // const pageInfo: PageInfo = await sanityClient.fetch(pageInfoQuery)
-  // const experiences: Experience[] = await sanityClient.fetch(experienceQuery)
-  // const projects: Project[] = await sanityClient.fetch(projectsQuery)
-  // const skills: Skill[] = await sanityClient.fetch(skillsQuery)
-  // const socials: Social[] = await sanityClient.fetch(socialsQuery)
+  const pageInfo: PageInfo = await sanityClient.fetch(pageInfoQuery)
+  const experiences: Experience[] = await sanityClient.fetch(experienceQuery)
+  const projects: Project[] = await sanityClient.fetch(projectsQuery)
+  const skills: Skill[] = await sanityClient.fetch(skillsQuery)
+  const socials: Social[] = await sanityClient.fetch(socialsQuery)
 
   return {
     props: {
