@@ -64,17 +64,17 @@ const Home: NextPage<Props> = ({ experiences, pageInfo, projects, skills, social
         <ContactMe />
       </section>
 
-        <footer className='sticky bottom-5 w-full cursor-pointer' >
-          <Link href="#hero" >
-            <div className='flex items-center justify-center' >
-              <img 
-                className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0'
-                src={urlFor(pageInfo.profilePic).url()}
-                alt="" 
-              />
-            </div>
-          </Link>
-        </footer>
+      <footer className='sticky bottom-5 w-full cursor-pointer' >
+        <Link href="#hero" >
+          <div className='flex items-center justify-center' >
+            <img 
+              className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0'
+              src={urlFor(pageInfo.heroImage).url()}
+              alt="" 
+            />
+          </div>
+        </Link>
+      </footer>
     </div>
   )
 }
